@@ -1,0 +1,91 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>JNUHOUR_SPOT</title>
+ <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="{% static 'assets/favicon.ico' %}" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="{% static 'css/styles.css' %}" rel="stylesheet" />
+        
+    </head>
+        <body id="page-top">
+            <!--메뉴 창 설정 메인페이지보다 작게 설정해서 내용보다 눈에 덜 띄게 설정-->
+         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <div class="navbar-brand"><strong><font color=#ffc800>JNUHOUR</font></strong></div>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="{% url 'accountapp:main' %}">Home</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+           <!-- 문구 삽입-->
+        <div class="container mt-5">
+            <div class="row">
+                <div class="col-lg-8">
+                    <!-- Post content-->
+                    <article>
+                        <!-- Post header-->
+                        <header class="mb-4">
+                            <!-- Post title-->
+                            <h1 class="fw-bolder mb-1">Check Spot</h1>
+                            <!-- Post meta content-->
+                            <div class="text-muted fst-italic mb-2">주차 위치를 확인해주세요.</div>
+                        </header>
+                    </article>      
+                </div>
+            </div>
+            </div>
+            
+    <div class="parking-lot">
+       <div class="info">
+           <h2>일반</h2>
+            <p id="normal">{{ normal_count }}</p>
+            <h2>전기</h2>
+            <p>0</p>
+        </div>
+        <div class="spaces">
+            <h2>주차장</h2>
+            <div class="grid">
+                {% for item in data %}
+                <div class="space" data-val="{{ item.val }}" style="{{ item.style }}">
+                  <span>{{ item.id }}</span>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <!--주차장 위치 추가css에 이미지 경로 삽입하기-->
+    <div class="parking-lot2">
+        <div class="img">
+        </div>
+            </div>
+   
+    <script>
+        setTimeout(function() {
+            location.reload();
+        }, 5000);
+    </script>
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="{% static 'js/scripts.js' %}"></script>
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <!-- * *                               SB Forms JS                               * *-->
+        <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+    </body>
+</html>
+
