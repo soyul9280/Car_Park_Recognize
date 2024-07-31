@@ -4,7 +4,8 @@
 - 작업기간 | 2023. 09. 01 ~ 2023. 12. 20
 - 구성원 | 3명
 ## 역할
-- 프론트엔드 : goorm, bootstrap으로 웹 디자인
+- 프론트엔드 : goorm, django, bootstrap 사용하여 웹 디자인
+- 백엔드 : 페이지 연결
 ## 기술
 - 차량 인식 : YOLO, OpenCV, Ultralytics
 ## 주요 기능
